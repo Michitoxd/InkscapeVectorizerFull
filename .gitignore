@@ -1,0 +1,30 @@
+# Artefactos de compilacion (CMake). build/ se regenera con:
+#   cmake -S . -B build && cmake --build build
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+compile_commands.json
+install_manifest.txt
+
+# Objetos, bibliotecas y ejecutables generados
+*.o
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.obj
+*.pdb
+
+# Editores y sistema
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db

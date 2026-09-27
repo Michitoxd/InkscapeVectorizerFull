@@ -1,0 +1,63 @@
+InkscapeVectorizerFull — NOTICE and attributions
+=================================================
+
+This project is a standalone extraction of the "Trace Bitmap" feature of
+Inkscape. It is licensed under the GNU General Public License, version 2 or
+later (GPL-2.0-or-later), the same license as the code it was extracted from.
+
+1. Inkscape
+-----------
+Source:      https://gitlab.com/inkscape/inkscape
+Version/tag: INKSCAPE_1_4_4 (commit dcaf3e7d9e6724cd18d6bd2b4f3d4f12ab691871)
+License:     GNU GPL-2.0-or-later
+Extracted:   src/trace/* (tracing engines, image maps, quantization, filters),
+             src/async/progress.h (progress/cancellation interface),
+             src/util/safe-printf.h, src/ui/dialog/tracedialog.cpp (used as
+             the behavioral reference for parameter wiring),
+             docs/dialog-trace.glade.orig (reference UI).
+Copyright:   (C) 2004-2022 Inkscape Authors, Bob Jamison, Stéphane Gimenez,
+             Marc Jeanmougin, PBS, Jon A. Cruz, Abhishek Sharma, and others —
+             see the SPDX headers of each extracted file.
+
+If you distribute this application (binary or source), you must do so under
+the terms of the GNU GPL v2 or later, keep these copyright notices, and offer
+the corresponding source. See LICENSE.
+
+2. Potrace (linked, not modified)
+---------------------------------
+Library:     libpotrace (potracelib) by Peter Selinger
+Home:        http://potrace.sourceforge.net
+License:     GNU GPL-2.0-or-later (library; the full Potrace program has
+             additional restrictions on the name "potrace" — see upstream).
+Used by:     src/core/trace/potrace/inkscape-potrace.cpp
+Note:        Inkscape's copy of potrace/trace/potrace/bitmap.h is
+             (C) 2001-2015 Peter Selinger and retains its own GPL header.
+
+3. AutoTrace (vendored, unmodified except where documented)
+-----------------------------------------------------------
+Source:      vendored from Inkscape src/3rdparty/autotrace
+             (AutoTrace 0.40.x snapshot, https://github.com/autotrace/autotrace)
+License:     GNU GPL-2.0-or-later (this vendored subset; note upstream
+             AutoTrace also contains LGPL-2.1 files — quantize.h/median.c
+             carry the LGPL notice where applicable).
+Used by:     src/core/trace/autotrace/inkscape-autotrace.cpp
+Modification: median.c — one-line change in quantize() documented inline
+             (IVF PATCH) and in docs/EXTRACCION.md; config.h replaced with a
+             trimmed standalone variant.
+
+4. lib2geom (linked, not modified)
+----------------------------------
+Library:     lib2geom by The Inkscape Organization / Rico Tzschichholz et al.
+Home:        https://gitlab.com/inkscape/lib2geom
+License:     LGPL-2.1-or-later (as distributed by Fedora as lib2geom).
+Used for:    path data structures (Geom::PathVector), path building and
+             SVG path serialization (write_svg_path).
+
+5. GTK / GLib stack (linked, not modified)
+------------------------------------------
+glibmm, gtkmm, gdk-pixbuf (LGPL-2.1-or-later), libxml2 (MIT).
+Used for: image loading, GUI, XML validation in tests.
+
+6. Sample content
+-----------------
+examples/sample_input.png is provided for testing only.
